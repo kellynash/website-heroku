@@ -1,0 +1,45 @@
+h1{
+	text-align: center;
+	font-color: darkgray;
+}
+body{
+	background-color: #342156;
+	height: 600em;
+}
+.jumbotron {
+	background-image: url('../images/index-head.jpg');
+	background-repeat: no-repeat;
+	background-size: 40%;
+	overflow: hidden;
+	background-position: right;
+	background-color:#D8D8D8;
+
+}
+.box-right{
+	float: left;
+	background-color: #fff;
+}	
+
+.list-group{
+	width: 20em;
+	height: 15em;
+	float: right;
+	padding-left: 2em;
+	padding-top: 2em;
+}
+
+.blog-button{
+	float: right;
+}
+
+#display-counter{
+	display: inline;
+	border: 2px solid black;
+	border-radius: 15px; 
+	background: #fff;
+	/*box-shadow: 15px 15px 15px 1 #546378;*/
+}
+#blogHead{
+	background: url();
+}
+ 
