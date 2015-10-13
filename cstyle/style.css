@@ -4,9 +4,10 @@ h1{
 }
 
 body{
-	background-color: #000;
+	background-color: #2e273d;
 	height: 600em;
 }
+
 
 .jumbotron {
 	overflow: hidden;
@@ -33,21 +34,29 @@ body{
 	margin: 5px 5%;
 }
 
-#blog-head{
-	background: #fff url('../images/infocom.gif') no-repeat 60% center;
-
-}
-
-#top-runner{
+#main-head{
 	background-image: url('../images/index-head.jpg');
 	background-repeat: no-repeat;
-	background-size: 60%;
+	background-size: 100%;
 
 }
 
-#user-footer{
+body #main-body{
+	background: linear-gradient(to top, black, white);
+	height: 600em;
+}
+
+#main-footer{
 	display: inline;
 }
+
+#blog-head{
+	background: #fff url('../images/blog-head.png') no-repeat 100% center;
+
+  	
+}
+
+
 
 #display-counter{
 	display: inline;
@@ -57,6 +66,9 @@ body{
 	/*box-shadow: 15px 15px 15px 1 #546378;*/
 }
 
+#image-footer{
+
+}
  
 #footer{
 
