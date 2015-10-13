@@ -2,10 +2,12 @@ h1{
 	text-align: center;
 	font-color: darkgray;
 }
+
 body{
 	background-color: #000;
 	height: 600em;
 }
+
 .jumbotron {
 	overflow: hidden;
 	background-position: right;
@@ -26,14 +28,24 @@ body{
 	float: right;
 }
 
-.jumbotron #top-runner{
+.panel{
+	padding: 10px 5%;
+	margin: 5px 5%;
+}
+
+#blog-head{
+	background: #fff url('../images/infocom.gif') no-repeat 60% center;
+
+}
+
+#top-runner{
 	background-image: url('../images/index-head.jpg');
 	background-repeat: no-repeat;
 	background-size: 60%;
 
 }
 
-.jumbotron #user-footer{
+#user-footer{
 	display: inline;
 }
 
@@ -44,9 +56,7 @@ body{
 	background: #fff;
 	/*box-shadow: 15px 15px 15px 1 #546378;*/
 }
-.jumbotron #blogHead{
-	background-color: #473685;
-}
+
  
 #footer{
 
