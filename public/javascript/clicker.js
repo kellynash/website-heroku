@@ -1,34 +1,13 @@
+var blogRand = [];
+img[0]='/infocom.gif';
+img[1]='/index-head.jpg';
 
-
-var clickMake  = function(counterstart){
-	this.counterstart = counterstart;
-
-	this.clickPlus = function(){
-		counterstart++;
-		console.log(counterstart);
-		document.getElementById("display-counter").innerHTML=counterstart;
-	}
-}
-
-clickMake.prototype.reset = function(){
-	if(this.counterstart != 0){
-		console.log("hi");
-		this.counterstart = 0;
-	} else{
-
-	};
+function getRandomImage(imgAr, path) {
+    path = '../images/blog-random'; 
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+    var imgStr = '<img src="' + path + img + '" alt = "">';
+    document.write(imgStr); document.close();
 }
 
 
-
-
-
-
-
-
-// var clicks = 0; 
-//     function clickPlus() {
-//         clicks += 1;
-//         document.getElementById("clicks").innerHTML = clicks;
-
-// }

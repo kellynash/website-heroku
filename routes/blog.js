@@ -43,7 +43,7 @@ router.route('/')
        res.send("error")
      } else{
        console.log("New blog named " + blog + "created!");
-       res.send(blog);
+       res.redirect("/blog.html");
      }
    });
  });
@@ -63,17 +63,19 @@ router.route('/')
 
    // update the blog with the id as the reference.
    .put(function(req, res) {
-       mongoose.model('Blog').findById({
-           _id: req.params.id,
-           title: req.params.title,
-           body: req.params.body
-       }, function(err, blog) {
-           if (err) return res.send(err);
 
-           res.json(blog);
-           res.send("blog was updated")
-       });
-   })
+       mongoose.model('Blog').findById({
+           _id: req.params.id
+       }, function(err, blog) {
+         blog.title = req.body.title;
+         blog.body = req.body.body; 
+           if (err)
+               res.send(err);
+
+           blog.save();
+           res.json(blog)
+        });
+     })
    // delete the bear with this id 
    .delete(function(req, res) {
        mongoose.model('Blog').remove({
