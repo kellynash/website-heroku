@@ -4,11 +4,20 @@ h1{
 }
 
 body{
-	background-color: #2e273d;
-	height: 600em;
+	background-color: lightgray;
 }
 
+.thumbnail{
+	background-color: rgba(255, 255, 255, 0.45);
+	background-size: 20%;
+	box-shadow: 26px 26px 77px -23px rgba(59,97,38,1);
+	margin: 0.5em 0.9em;
+}
 
+.thumbnail img{
+	max-width: 100%;
+	border-radius: 15px;
+}
 .jumbotron {
 	overflow: hidden;
 	background-position: right;
@@ -29,27 +38,13 @@ body{
 	padding: 10px 5%;
 	margin: 5px 5%;
 }
-.thumbnail{
-	background-size: 10%;
-}
 #main-head{
 	background:#fff url('../images/index-head.jpg') no-repeat 
-	background-size: 60%;
+	background-position: 50% 0px;
+}
+#mid-page img{
+	max-width: 100%;
+	border-radius: 15px;
 }
 
-#blog-head{
-	background:#fff url('../images/blog-head.png') no-repeat  center;
-	background-size: 90%
-  	
-}
-body #blog-body{
-	background: #fff url('../images/blog-body-bck.jpg') no-repeat  center;
-}
 
-#display-counter{
-	display: inline;
-	border: 2px solid black;
-	border-radius: 15px; 
-	background: #fff;
-	/*box-shadow: 15px 15px 15px 1 #546378;*/
-}
