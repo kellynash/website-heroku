@@ -1,26 +1,27 @@
 require('dotenv').load();
 
-var express = require('express');
-var app = express();
-var path = require('path');
-var http = require('http');
-var fs = require('fs');
+var express      = require('express');
+var app          = express();
+var path         = require('path');
+var http         = require('http');
+var fs           = require('fs');
 var bodyParser   = require('body-parser');
 
-var passport = require('passport');
-var flash    = require('connect-flash');
+var passport     = require('passport');
+var flash        = require('connect-flash');
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 
-var Twit = require('twit');
-var axios = require('axios');
+var Twit         = require('twit');
+var axios        = require('axios');
 
-var db = require('./model/db');
-var blogModel = require('./model/blog');
-var _ = require('lodash');
-var router = express.Router();
-var blogRoutes = require('./routes/blog');
+var db           = require('./model/db');
+var blogModel    = require('./model/blog');
+var _            = require('lodash');
+var router       = express.Router();
+var blogRoutes   = require('./routes/blog');
+
 require('./routes/userRoutes')(app, passport);
 
 app.use(function(req, res, next) {
@@ -73,28 +74,27 @@ var fetchFoll = function(req, res){
 
 
 app.use(express.static('public'));
-
-app.use('/api/handle/:twitterHandle', fetchTweets);
-app.use('/api/followers/:twitterHandle', fetchFoll);
-app.use('/api/blogs', blogRoutes);
-
-app.use(morgan('dev'));
-app.use(cookieParser()); 
-app.use(bodyParser()); 
-
 app.get('/', function(req, res){
     res.readFile('index.html')
 });
 
-// passport config
-// app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); 
-// app.use(passport.initialize());
-// app.use(passport.session()); 
-// app.use(flash()); 
+app.use   ('/api/handle/:twitterHandle', fetchTweets);
+app.use   ('/api/followers/:twitterHandle', fetchFoll);
+app.use   ('/api/blogs', blogRoutes);
+app.use   (morgan('dev'));
+app.use   (cookieParser()); 
+// app.use   (bodyParser()); 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(express.static(path.join(__dirname, 'public')));
+// passport config
+app.use   (session({ secret: 'ilovescotchscotchyscotchscotch' })); 
+app.use   (passport.initialize());
+app.use   (passport.session()); 
+app.use   (flash()); 
+app.use   (bodyParser.urlencoded({ extended: true }))
+// app.use   (bodyParser.urlencoded());
+app.use   (express.static(path.join(__dirname, 'public')));
+
+
 
 app.set('port', process.env.PORT || 4000);
 
