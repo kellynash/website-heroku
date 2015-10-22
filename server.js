@@ -1,17 +1,18 @@
 require('dotenv').load();
-var express = require('express');
-var path = require('path');
-var http = require('http');
-var fs = require('fs');
-var bodyParser = require('body-parser');
-var db = require('./model/db');
-var blogModel = require('./model/blog');
-var Twit = require('twit');
-var axios = require('axios');
-var _ = require('lodash');
-var router = express.Router();
-var app = express();
-var blogRoutes = require('./routes/blog');
+
+var express      = require('express');
+var path         = require('path');
+var http         = require('http');
+var fs           = require('fs');
+var bodyParser   = require('body-parser');
+var db           = require('./model/db');
+var blogModel    = require('./model/blog');
+var Twit         = require('twit');
+var axios        = require('axios');
+var _            = require('lodash');
+var router       = express.Router();
+var app          = express();
+var blogRoutes   = require('./routes/blog');
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
