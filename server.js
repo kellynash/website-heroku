@@ -70,7 +70,7 @@ app.use('/api/followers/:twitterHandle', fetchFoll);
 app.use('/api/blogs', blogRoutes)
 
 app.get('/', function(req, res){
-    res.readFile('index.html')
+    res.sendFile('index.html')
 });
 
 app.use(bodyParser.json());

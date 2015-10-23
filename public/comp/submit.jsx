@@ -34,12 +34,28 @@ var BlogForm = React.createClass({
                        <input type="text" className="form-control" ref="title" placeholder="title"/>
                    </div>
                    <div className="form-group">
-                       <label >Tags</label>
-                       <input type="author" className="form-control" ref="author" placeholder="author"/>
+                       <label>Author</label>
+                       <input type="text" className="form-control" ref="author" placeholder="author"/>
                    </div>
                    <div className="form-group">
-                       <label>Post</label>
-                       <textarea  rows="15" className="form-control" ref="body" placeholder="body"></textarea>
+                       <label>Block One</label>
+                       <textarea  rows="12" className="form-control" ref="block1" placeholder="block"></textarea>
+                   </div>
+                   <div className="form-group">
+                       <label>Subheader One</label>
+                       <input type="text" className="form-control" ref="subHead1" placeholder="subheader"/>
+                   </div>
+                   <div className="form-group">
+                       <label>Block Two</label>
+                       <textarea  rows="6" className="form-control" ref="block2" placeholder="block"></textarea>
+                   </div>
+                    <div className="form-group">
+                       <label>Subheader Two</label>
+                       <input type="text" className="form-control" ref="subHead2" placeholder="subheader"/>
+                   </div>
+                   <div className="form-group">
+                       <label>Block Three</label>
+                       <textarea  rows="4" className="form-control" ref="block3" placeholder="block"></textarea>
                    </div>
                    <button onClick={this.handleSubmit} type="submit" className="btn btn-default">Submit</button>
                </form>
