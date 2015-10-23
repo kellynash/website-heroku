@@ -38,24 +38,8 @@ var BlogForm = React.createClass({
                        <input type="text" className="form-control" ref="author" placeholder="author"/>
                    </div>
                    <div className="form-group">
-                       <label>Block One</label>
-                       <textarea  rows="12" className="form-control" ref="block1" placeholder="block"></textarea>
-                   </div>
-                   <div className="form-group">
-                       <label>Subheader One</label>
-                       <input type="text" className="form-control" ref="subHead1" placeholder="subheader"/>
-                   </div>
-                   <div className="form-group">
-                       <label>Block Two</label>
-                       <textarea  rows="6" className="form-control" ref="block2" placeholder="block"></textarea>
-                   </div>
-                    <div className="form-group">
-                       <label>Subheader Two</label>
-                       <input type="text" className="form-control" ref="subHead2" placeholder="subheader"/>
-                   </div>
-                   <div className="form-group">
-                       <label>Block Three</label>
-                       <textarea  rows="4" className="form-control" ref="block3" placeholder="block"></textarea>
+                       <label>Body</label>
+                       <textarea  rows="12" className="form-control" ref="body" placeholder="block"></textarea>
                    </div>
                    <button onClick={this.handleSubmit} type="submit" className="btn btn-default">Submit</button>
                </form>
