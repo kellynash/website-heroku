@@ -75,7 +75,7 @@ var fetchFoll = function(req, res){
 
 app.use(express.static('public'));
 app.get('/', function(req, res){
-    res.readFile('index.html')
+    res.sendFile('index.html')
 });
 
 app.use   ('/api/handle/:twitterHandle', fetchTweets);
