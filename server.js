@@ -21,7 +21,11 @@ var blogModel    = require('./model/blog');
 var _            = require('lodash');
 var router       = express.Router();
 var blogRoutes   = require('./routes/blog');
+var configDB = require('./config/database.js');
 
+mongoose.connect(configDB.url);
+
+require('./config/passport')(passport);
 require('./routes/userRoutes')(app, passport);
 
 app.use(function(req, res, next) {
@@ -81,6 +85,7 @@ app.get('/', function(req, res){
 app.use   ('/api/handle/:twitterHandle', fetchTweets);
 app.use   ('/api/followers/:twitterHandle', fetchFoll);
 app.use   ('/api/blogs', blogRoutes);
+
 app.use   (morgan('dev'));
 app.use   (cookieParser()); 
 // app.use   (bodyParser()); 
@@ -90,12 +95,10 @@ app.use   (session({ secret: 'ilovescotchscotchyscotchscotch' }));
 app.use   (passport.initialize());
 app.use   (passport.session()); 
 app.use   (flash()); 
-app.use   (bodyParser.urlencoded({ extended: true }))
-// app.use   (bodyParser.urlencoded());
+app.use   (bodyParser.urlencoded({ extended: true })) // app.use   (bodyParser.urlencoded());
 app.use   (express.static(path.join(__dirname, 'public')));
 
-
-
+app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 4000);
 
 var server = app.listen(app.get('port'), function(){ 
